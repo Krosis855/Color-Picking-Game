@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Color Picker Game</title>
+        <link rel="stylesheet" href="css/color-picker.css">
+    </head>
+    <body>
+        <h1>Pick a Color, Any Color!</h1>
+        <div id="container">
+        </div>
+
+        <script>
+            let container = document.getElementById('container');
+
+            const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet', 'pink'];
+            let correctChoice;
+            runGame();
+
+            function runGame() {
+                correctChoice = colorSelect();
+                for (const color of colors) {
+                    let buttonEl = document.createElement('button');
+                    buttonEl.setAttribute('type', 'button');
+                    buttonEl.setAttribute('id', color);
+                    buttonEl.setAttribute('onclick', 'makeGuess(this)');
+                    buttonEl.setAttribute('data-color', color);
+                    let text = document.createTextNode(capitalize(color));
+                    buttonEl.appendChild(text);
+                    container.appendChild(buttonEl);
+                }
+            }
+
+            function capitalize(color) {
+                let capitalizedColor = color[0].toUpperCase();
+                capitalizedColor = capitalizedColor + color.slice(1);
+                return capitalizedColor;
+            }
+
+            function colorSelect() {
+                let computerChoice;
+                computerChoice = colors[Math.floor(Math.random() * colors.length)];
+                console.log(computerChoice);
+                return computerChoice;
+            }
+            
+            function makeGuess(element) {
+                let color = element.dataset.color;
+                console.log(element.dataset.color);
+                if (color !== correctChoice) {
+                    element.setAttribute('class', 'hide-button');
+                    alert('Please try again');
+                } else {
+                    alert('You figured me out didn\'t you?');
+                    cleanUp();
+                    runGame();
+                }
+            }
+
+            function cleanUp() {
+                while (container.firstChild) {
+                    container.removeChild(container.firstChild);
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,79 @@
+body {
+    text-align: center;
+    background-image: url(https://i.ytimg.com/vi/psYfugBVESY/maxresdefault.jpg);
+    background-position: center;
+    background-repeat: inherit;
+    background-size: cover;
+    height: 100%;
+}
+
+h1 {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    color: white;
+    font-size: 48px;
+    background-color:black;
+    
+}
+
+button {
+    height: 50px;
+    width: 100%;
+    color: white;
+    font-size: 2em;
+    margin: 0.3em;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    border-radius: 50px;
+}
+
+div {
+    
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+#red {
+    background-color: red;
+}
+
+#orange {
+    background-color: orange;
+}
+
+#yellow {
+    background-color: yellow;
+}
+
+#green {
+    background-color: green;
+}
+
+#blue {
+    background-color: blue;
+}
+
+#indigo {
+    background-color: indigo;
+}
+
+#violet {
+    background-color: violet;
+}
+
+#pink {
+    background-color: pink;
+}
+
+button:hover {
+    box-shadow: 0 3px 8px 0 black;
+}
+
+.hide-button {
+    display: none;
+}
+
+#container {
+    width: 300px;
+    margin: auto;
+}
